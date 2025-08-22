@@ -60,3 +60,20 @@ nav ul {
   padding: 0;
   display: flex;
 }
+nav li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 1vw 1.5vw;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+nav li a:hover {
+  background-color: #333;
+}
+
+/* Diferencia en el lado derecho */
+.nav-right li a {
+  padding: 1vw 1.2vw;
+}
