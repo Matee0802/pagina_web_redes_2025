@@ -106,3 +106,20 @@ nav li a:hover {
 .slide.active {
   display: block;
 }
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ddd;
+  border: none;
+  padding: 1%;
+  cursor: pointer;
+}
+
+.arrow.left {
+  left: 1%;
+}
+
+.arrow.right {
+  right: 1%;
+}
