@@ -25,3 +25,8 @@ header {
   color: #000;
   padding: 0.5% 1%;
 }
+.search-bar {
+  float: left;
+  display: flex;
+  width: 95%; /* ocupa la parte izquierda */
+}
