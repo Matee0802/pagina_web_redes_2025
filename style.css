@@ -9,3 +9,12 @@ body {
   background: #fff;
   color: #333;
 }
+/* logo y buscador */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: #fff;
+  padding: 1% 2%;
+}
