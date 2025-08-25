@@ -164,3 +164,29 @@ nav li a:hover {
   text-align: center;
   font-size: 1vw;
 }
+/* Footer */
+.footer-seccion {
+  background: #fff;
+  padding: 2%;
+  border-top: 0.2vw solid #000;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 40%;
+  gap: 2%;
+  align-items: start;
+}
+
+.footer-box {
+  border: 0.2vw solid #000;
+  padding: 5%;
+  text-align: center;
+  font-size: 1vw;
+  font-weight: bold;
+}
+
+.footer-box.redes {
+  text-align: left;
+  font-size: 0.9vw;
+}
