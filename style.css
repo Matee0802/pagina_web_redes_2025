@@ -142,3 +142,17 @@ nav li a:hover {
 .dot.active {
   background: #555;
 }
+.cards-section {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin: 3% 0;
+}
+.card {
+  border: 0.2vw solid #000;
+  padding: 10% 2%;
+  text-align: center;
+  width: 25%;
+  font-weight: bold;
+  font-size: 1vw;
+}
