@@ -224,6 +224,10 @@ nav li a:hover {
     margin-top: 2%;
   }
 
+nav li a {
+    font-size: 2vw; 
+    padding: 2% 1%;
+}
   .search-bar input {
     font-size: 1.5vw;
     width: 70%;
