@@ -190,3 +190,19 @@ nav li a:hover {
   text-align: left;
   font-size: 0.9vw;
 }
+
+/* ==== Compus (1025px en adelante) ==== */
+@media (min-width: 1025px) {
+  .logo {
+    font-size: 1.2vw;
+  }
+  .search-bar input {
+    font-size: 1vw;
+  }
+  .card {
+    font-size: 1vw;
+  }
+  .text-box {
+    font-size: 1vw;
+  }
+}
