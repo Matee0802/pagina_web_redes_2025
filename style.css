@@ -206,3 +206,52 @@ nav li a:hover {
     font-size: 1vw;
   }
 }
+
+/* ==== Tablet (768px a 1024px) ==== */
+@media (max-width: 1024px) and (min-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 2% 4%;
+  }
+
+  .logo {
+    font-size: 3vw;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-top: 2%;
+  }
+
+  .search-bar input {
+    font-size: 1.5vw;
+    width: 70%;
+  }
+
+  .cards-section {
+    flex-wrap: wrap;
+    gap: 3%;
+  }
+
+  .card {
+    width: 45%;
+    font-size: 2vw;
+    padding: 8% 2%;
+  }
+
+  .text-box {
+    width: 90%;
+    font-size: 1.5vw;
+  }
+
+  .footer-grid {
+    grid-template-columns: 50% 50%;
+    gap: 3%;
+  }
+
+  .footer-box {
+    font-size: 1.2vw;
+  }
+}
+
