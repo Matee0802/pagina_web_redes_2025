@@ -123,3 +123,22 @@ nav li a:hover {
 .arrow.right {
   right: 1%;
 }
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 3%;
+  display: flex;
+  gap: 0.5vw;
+}
+
+.dot {
+  width: 1vw;
+  height: 1vw;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background: #555;
+}
