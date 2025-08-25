@@ -298,11 +298,11 @@ nav li a {
 
   .carousel {
     width: 100%;
-    height: 40vh;
+    height: 60vh;
   }
 
   .dots {
-    gap: 1vw;
+    gap: 2vw;
   }
 
   .cards-section {
