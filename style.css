@@ -257,6 +257,10 @@ nav li a {
   .footer-box {
     font-size: 1.5vw;
   }
+  
+  nav ul li {
+  margin: 0 1vw;
+}
 }
 
 /* ==== Celular (menos de 768px) ==== */
@@ -286,16 +290,22 @@ nav li a {
     font-size: 4vw;
   }
 
-  nav {
-    flex-direction: column;
-    padding: 3%;
-  }
+nav {
+    flex-direction: column; /* Cambié de fila a columna */
+    padding: 4%;
+    text-align: center;
+}
 
-  nav li a {
-    font-size: 4vw;
-    padding: 2% 0;
-  }
+nav ul {
+    flex-direction: column; /* Lista vertical */
+    width: 100%;
+}
 
+nav li a {
+    font-size: 5vw; /* Antes era más chico */
+    padding: 3% 0;
+    border-bottom: 1px solid #333; /* separador visual */
+}
   .carousel {
     width: 100%;
     height: 60vh;
