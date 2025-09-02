@@ -5,35 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- imageeeeeeenes -->
+    <!-- imagenes -->
     <title>Morbido Ropas</title>
 </head>
 <body>
 
-  <header>
-    <div class="logo">logo</div>
-    <div class="search-bar">
-      <input type="text" placeholder="¿Qué estás buscando?">
-      <button><i class="fa fa-search"></i></button>
-    </div>
-  </header>
+<header>
+  <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+  <div class="logo">logo</div>
+  <div class="search-bar">
+    <input type="text" placeholder="¿Qué estás buscando?">
+    <button><i class="fa fa-search"></i></button>
+  </div>
+</header>
 
-  
-  <!--barraa cartegorias -->
-  <nav>
-    <ul class="nav-left">
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Diseños</a></li>
-      <li><a href="#">Segunda mano</a></li>
-      <li><a href="#">Contacto</a></li>
-      <li><a href="#">Sobre nosotros</a></li>
-    </ul>
-    <ul class="nav-right">
-      <li><a href="#"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
-      <li><a href="#"><i class="fa fa-user"></i> Cuenta</a></li>
-    </ul>
-  </nav>
-
+<nav>
+  <ul class="nav-left">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Diseños</a></li>
+    <li><a href="#">Segunda mano</a></li>
+    <li><a href="#">Contacto</a></li>
+    <li><a href="#">Sobre nosotros</a></li>
+  </ul>
+  <ul class="nav-right">
+    <li><a href="#"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+    <li><a href="#"><i class="fa fa-user"></i> Cuenta</a></li>
+  </ul>
+</nav>
 
    <section class="carousel">
     <button class="arrow left"><i class="fa fa-chevron-left"></i></button>
@@ -89,6 +87,15 @@
     </div>
   </footer>
 <!------------------------------------------------------------------------------------------------->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".menu-toggle");
+  const menus = document.querySelectorAll("nav ul");
 
+  toggle.addEventListener("click", () => {
+    menus.forEach(menu => menu.classList.toggle("show"));
+  });
+});
+</script>
 </body>
 </html>
