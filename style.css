@@ -188,31 +188,98 @@ nav li a:hover {
 }
 
 /* ================= Footer ================= */
+/* Footer general */
 .footer-seccion {
-  background: #fff;
-  padding: 2%;
-  border-top: 0.2vw solid #000;
+  background: #000;
+  color: #fff;
+  padding: 1.5rem;
 }
 
+/* Grid: logo | centro (donac/alias) | redes */
 .footer-grid {
   display: grid;
-  grid-template-columns: 20% 20% 20% 40%;
-  gap: 2%;
-  align-items: start;
+  grid-template-columns: 18% 40% 42%;
+  gap: 1rem;
+  align-items: center;
 }
 
+/* Cada "columna" sin padding interno extra (las cajas blancas están dentro) */
 .footer-box {
-  border: 0.2vw solid #000;
-  padding: 5%;
+  background: transparent;
+  padding: 0;
   text-align: center;
-  font-size: 1vw;
-  font-weight: bold;
 }
 
+/* Mercado Pago: imagen dentro de un recuadro blanco */
+.mp-img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 120px;
+  background: #fff;
+  padding: 0.5rem;
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+
+/* Columna central: apilar donación + alias */
+.middle .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+/* Estilo común para los elementos apilados (blanco con borde negro) */
+.stack-item {
+  width: 100%;
+  max-width: 300px;      /* ajustá si querés más ancho */
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  padding: 0.6rem 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Donaciones: es un link (botón visual) */
+.stack-donacion {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Alias: texto plano (no link) */
+.alias-text {
+  font-weight: 500;
+}
+
+/* Redes sociales (mantener similar a lo anterior) */
 .footer-box.redes {
   text-align: left;
-  font-size: 0.9vw;
+  padding-left: 1rem;
 }
+.footer-box.redes h4 {
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.footer-box.redes a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin: 0.4rem 0;
+}
+.footer-box.redes a:hover { color: #ff4d4d; }
+
+/* Footer copy */
+.footer-copy {
+  text-align: center;
+  color: #bbb;
+  margin-top: 1rem;
+  border-top: 1px solid #111;
+  padding-top: 0.6rem;
+}
+
 
 /* ================== Responsive ================== */
 
@@ -230,6 +297,9 @@ nav li a:hover {
   .text-box {
     font-size: 1vw;
   }
+.mp-img{
+  max-width: 150px;
+}
 }
 
 /* ==== Tablet (768px a 1024px) ==== */
@@ -289,17 +359,51 @@ nav li a:hover {
     font-size: 1.5vw;
   }
 
-  .footer-grid {
-    grid-template-columns: 50% 50%;
-    gap: 3%;
-  }
-
   .footer-box {
     font-size: 1.5vw;
   }
   
   nav ul li {
     margin: 0 1vw;
+  }
+  
+ .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .pago-donaciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .pago-donaciones img {
+    max-width: 140px;
+    margin: 0 auto;
+  }
+
+  .stack-item {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .footer-box.redes {
+    text-align: center;
+  }
+
+  .footer-box.redes h4 {
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-copy {
+    grid-column: 1 / 4; /* ocupa todo el ancho */
+    text-align: center;
+    margin-top: 1rem;
   }
 }
 
@@ -344,6 +448,32 @@ nav li a:hover {
     font-size: 4vw;
     padding: 0.4vw 2vw;
   }
+
+
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+    gap: 0.9rem; 
+  }
+
+
+  .stack-item { 
+    max-width: 220px;   /* antes 90%, ahora fijo más chico */
+    font-size: 0.9rem;  /* letra un poco más chica */
+  }
+
+  .mp-img {
+    max-width: 100px;   /* achico logo */
+  }
+
+  .footer-box.redes { 
+    text-align: center; 
+    padding-left: 0; 
+  }
+
+  .footer-box.redes a {
+    font-size: 0.9rem; 
+  }
+
 }
 /* Menú oculto por defecto en móvil */
 @media (max-width: 767px) {
