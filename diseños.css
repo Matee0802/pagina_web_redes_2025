@@ -1,0 +1,281 @@
+/* Estilos generales para el contenido principal */
+.content-diseños {
+    max-width: 1200px; /* Ajusta al ancho que mejor se adapte a tu diseño */
+    margin: 20px auto;
+    padding: 0 20px;
+    color: rgb(0, 0, 0); /* Asumiendo que el fondo es oscuro */
+}
+
+/* ----------------------------------- */
+/* Sección de Título y Bienvenida */
+/* ----------------------------------- */
+
+.seccion-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.titulo-diseños {
+    font-size: 3rem; /* Tamaño del texto "Diseños" */
+    font-weight: bold;
+    width: 30%; /* Ajusta el ancho para el título */
+    padding-bottom: 5px;
+    border-bottom: 3px solid #e20000; /* Línea roja debajo del título */
+    line-height: 1; /* Para que la línea esté pegada al texto */
+}
+
+.intro-texto {
+    font-size: 1rem;
+    width: 65%; /* Ajusta el ancho para el texto de bienvenida */
+    line-height: 1.5;
+    margin-top: 15px; /* Para alinear con el inicio del título */
+}
+
+/* ----------------------------------- */
+/* Estilos para los Bloques de Diseño */
+/* ----------------------------------- */
+
+.bloque-diseño {
+    display: grid;
+    /* Define 3 columnas: Lateral (botones/info), Prenda (grande), Lateral (botones/info) */
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 15px; /* Espacio entre las columnas */
+    margin-bottom: 40px;
+}
+
+/* ----------------------------------- */
+/* Contenedor de la Prenda (Imagen o placeholder) */
+/* ----------------------------------- */
+
+.contenedor-prenda {
+    background-color: #212121; /* Color de fondo oscuro para el placeholder */
+    display: flex; /* Para centrar la imagen dentro */
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1.5; /* Proporción para que la prenda sea más alta que ancha */
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+}
+
+.contenedor-prenda .img-prenda-principal {
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+    height: 100%; /* La imagen ocupará todo el alto del contenedor */
+    object-fit: cover; /* Recorta la imagen para cubrir el contenedor manteniendo proporciones */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+/* ----------------------------------- */
+/* Contenedores de Botones Laterales */
+/* ----------------------------------- */
+
+.botones-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boton-prenda {
+    background-color: #212121;
+    color: white;
+    padding: 0; /* Eliminamos el padding para que la imagen ocupe todo el botón */
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: background-color 0.3s;
+    overflow: hidden; /* Asegura que la imagen dentro no se desborde */
+    display: flex; /* Para que la imagen se ajuste bien */
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Altura fija para los botones pequeños, ajusta si es necesario */
+}
+
+.boton-prenda:hover {
+    background-color: #333333;
+}
+
+.boton-prenda img {
+    width: 100%; /* La imagen ocupará todo el ancho del botón */
+    height: 100%; /* La imagen ocupará todo el alto del botón */
+    object-fit: cover; /* Recorta la imagen para cubrir el botón manteniendo proporciones */
+    display: block;
+}
+
+/* En el diseño superior, los botones están a la izquierda y tienen bordes púrpuras */
+.diseño-superior .botones-izq .boton-prenda {
+    border-left: 5px solid #d90000; /* Borde izquierdo púrpura */
+}
+
+/* En el diseño inferior, los botones están a la derecha y tienen bordes púrpuras */
+.diseño-inferior .botones-der .boton-prenda {
+    border-right: 5px solid #d90000; /* Borde derecho púrpura */
+    /* text-align: right; Esto ya no es necesario si la imagen ocupa todo el espacio */
+}
+
+/* ----------------------------------- */
+/* Contenedores de Información Lateral */
+/* ----------------------------------- */
+
+.info-diseño {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los bloques de información */
+}
+
+.info-item {
+    background-color: #212121;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    /* Estilos específicos para los bloques de inspiración (más grandes) */
+}
+
+.inspiracion {
+    flex-grow: 1; /* Hace que el bloque de inspiración ocupe el espacio restante */
+    min-height: 150px; /* Asegura un tamaño mínimo */
+}
+
+/* Alineación para la información en el diseño superior (derecha) */
+.info-derecha {
+    text-align: right;
+}
+
+/* Alineación para la información en el diseño inferior (izquierda) */
+.info-izquierda {
+    text-align: left;
+}
+
+.boton-prenda.active {
+    border: 2px solid #d90000 !important; /* Borde rojo para la miniatura activa */
+    box-shadow: 0 0 5px rgba(217, 0, 0, 0.5); /* Sombra sutil para destacar */
+}
+
+@media (max-width: 767px) {
+    /* ----------------------------------- */
+    /* Ajustes para Título y Bienvenida */
+    /* ----------------------------------- */
+    .seccion-intro {
+        flex-direction: column; 
+        align-items: center; 
+        margin-bottom: 20px; 
+    }
+
+    .titulo-diseños {
+        font-size: 2.5rem; 
+        width: 100%; 
+        text-align: center; 
+        border-bottom: none; 
+        padding-bottom: 0;
+        margin-bottom: 15px; 
+    }
+    
+    .titulo-diseños::after {
+        content: '';
+        display: block;
+        width: 60px; 
+        height: 3px;
+        background-color: #e20000;
+        margin: 5px auto 0; 
+    }
+    
+    .intro-texto {
+        font-size: 1rem;
+        width: 100%; 
+        margin-top: 0; 
+        text-align: center; 
+    }
+
+    /* ----------------------------------- */
+    /* Estilos para los Bloques de Diseño */
+    /* ----------------------------------- */
+    .bloque-diseño {
+        /* Se mantiene una sola columna para apilar */
+        grid-template-columns: 1fr; 
+        gap: 10px; /* Reducimos el espacio entre la prenda y las miniaturas/info */
+        margin-bottom: 30px;
+    }
+    
+    /* ----------------------------------- */
+    /* Contenedor de la Prenda (Imagen Grande) */
+    /* ----------------------------------- */
+    .contenedor-prenda {
+         aspect-ratio: 1 / 1.2; 
+         /* CAMBIO CLAVE: La prenda principal va PRIMERO */
+         order: 1; 
+         margin-bottom: 15px; /* Espacio para separar de las miniaturas */
+    }
+
+
+    /* ----------------------------------- */
+    /* Contenedores de Botones Laterales (Miniaturas) */
+    /* ----------------------------------- */
+    /* Aquí necesitamos que los dos contenedores laterales (izq y der) se junten 
+       para formar una sola fila de miniaturas. Esto funcionará si solo usas 
+       uno de los dos en el HTML en móvil o si los elementos HTML de las miniaturas 
+       están justo después de la prenda.
+
+       Si tu HTML tiene esta estructura para el bloque de diseño:
+       <div> (Botones Izq) </div>
+       <div> (Prenda) </div>
+       <div> (Botones Der/Info) </div>
+       
+       ...entonces usaremos 'order' para reorganizarlos. */
+    
+    .botones-lateral {
+        /* Mantenemos la fila deslizable */
+        flex-direction: row; 
+        flex-wrap: nowrap; 
+        justify-content: center; /* Centramos las miniaturas */
+        overflow-x: auto; 
+        gap: 8px; /* Espacio entre miniaturas */
+        padding: 0; 
+        
+        /* CAMBIO CLAVE: Las miniaturas van SEGUNDO, justo debajo de la prenda */
+        order: 2; 
+        margin-bottom: 15px; /* Espacio antes de la información */
+    }
+    
+    .boton-prenda {
+        /* Ajuste de tamaño para que se parezca más al ejemplo (miniaturas cuadradas) */
+        min-width: 70px; 
+        height: 70px; 
+        flex-shrink: 0; 
+        
+        /* Aseguramos que la imagen ocupe todo el botón */
+        padding: 0; 
+        background-color: #212121; /* Fondo para que se note el borde de la miniatura */
+    }
+
+    /* Eliminamos los grandes bordes laterales */
+    .diseño-superior .botones-izq .boton-prenda,
+    .diseño-inferior .botones-der .boton-prenda {
+        border-left: none; 
+        border-right: none; 
+        /* Si quieres un borde de selección en la miniatura activa, añádelo aquí con JavaScript:
+           &.activo { border: 2px solid #d90000; } 
+        */
+        border: 2px solid #212121; /* Un borde sutil para enmarcar las miniaturas */
+    }
+    
+    /* ----------------------------------- */
+    /* Contenedores de Información Lateral */
+    /* ----------------------------------- */
+    .info-diseño {
+        flex-direction: column; 
+        gap: 10px;
+        /* La información va TERCERO, debajo de las miniaturas */
+        order: 3; 
+    }
+
+    .info-item {
+        padding: 15px; 
+        text-align: left; /* Volvemos a alinear a la izquierda para el texto largo */
+    }
+    
+    .inspiracion {
+        min-height: 80px; 
+    }
+}

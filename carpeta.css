@@ -1,0 +1,288 @@
+/* ================= Product Grid Section ================= */
+.products-section {
+  width: 85%;
+  margin: 3% auto;
+  background: #fff;
+  border: 0.3vw solid #000;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Filtrador */
+.filter-bar {
+  text-align: center;
+  padding: 1.2rem;
+  border: 2px solid #000;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Grilla de productos */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+/* Tarjeta */
+.product-card {
+  width: 100%;
+  background: #fff;
+  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 1 / 1.25; /* 🔹 más cuadrado y proporcional */
+}
+
+.product-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Imagen */
+.product-image {
+  width: 100%;
+  height: 75%;
+  background: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nombre y precio */
+.product-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.6rem;
+  border-top: 2px solid #000;
+  background: #fff;
+}
+
+.product-price {
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-top: 2px solid #000;
+  background: #d9d9d9;
+}
+
+/* Botón Ver más */
+.view-more-button {
+  display: block;
+  width: 220px;
+  margin: 3rem auto 0;
+  padding: 0.9rem 0;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.view-more-button:hover {
+  background: #444;
+}
+/* =================== RESPONSIVE =================== */
+
+/* 📱 Responsive mejorado para teléfonos */
+@media (max-width: 768px) {
+  .products-section {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .filter-bar {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 7000px;
+    aspect-ratio: 2 / 3; /* 🔹 más alto para fotos */
+  }
+
+  .product-image {
+    height: 100%; /* 🔹 aumenta altura del área de imagen */
+  }
+
+  .product-image img {
+    object-fit: cover;
+  }
+
+  .product-name {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .product-price {
+    font-size: 0.95rem;
+    padding: 0.4rem;
+  }
+
+  .view-more-button {
+    width: 70%;
+    font-size: 0.95rem;
+    margin-top: 2rem;
+  }
+}
+
+/* Tablets: 3 columnas */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-image {
+    height: 220px;
+  }
+}
+
+/* ================= VISTA DE PRODUCTO (VENTA.PHP) ================= */
+
+/* 1. LAYOUT PRINCIPAL: Imagen y Miniaturas (Izquierda) vs. Info (Derecha) */
+.product-view {
+    display: flex; 
+    gap: 30px; 
+    max-width: 1100px; /* Un máximo para que no se estire demasiado */
+    width: 90%;
+    margin: 3% auto;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+/* 2. COLUMNA DE IMAGEN Y MINIATURAS (agrupadas virtualmente por flex) */
+/* Permitimos que la imagen principal tome su espacio */
+.main-image {
+    flex-basis: 400px; /* Ancho base */
+    flex-grow: 1;
+    order: 1; /* Posición 1 */
+}
+.main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid #000;
+}
+
+/* Las miniaturas se colocan debajo de la imagen principal si hay espacio */
+.gallery-column {
+    display: flex;
+    flex-direction: row; 
+    gap: 10px;
+    width: 100%; /* Ocupa el ancho de la columna de la imagen si se envuelve */
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+    margin-top: 10px;
+    /* Ajuste para que se vea a la izquierda en pantallas grandes, debajo de la imagen. */
+    flex-basis: 400px; 
+    order: 2; /* Posición 2 (después de la imagen principal) */
+}
+.gallery-thumbnail {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #000;
+    cursor: pointer;
+    overflow: hidden;
+}
+.gallery-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 3. COLUMNA DE INFORMACIÓN (Derecha) */
+.info-column {
+    flex-basis: 350px; /* Ancho base para la información */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column; /* Apila el contenido (título, precio, info-box, form) */
+    order: 3; /* Posición 3 (la última) */
+}
+
+/* ================= ELEMENTOS INTERNOS DE INFO-COLUMN ================= */
+
+/* 4. SOLUCIÓN A LETRAS INVISIBLES Y ORDEN DE MEDIDAS */
+.info-box {
+    margin-top: 15px; 
+    margin-bottom: 25px; 
+    
+    background: #000; 
+    border: 2px solid #000;
+    padding: 1rem;
+    
+    /* ¡CRUCIAL! Sobrescribe cualquier color de texto por defecto */
+    color: #fff !important; 
+    text-align: left;
+}
+
+/* Título "Medidas Técnicas" */
+.info-box-title {
+    /* Forzamos el color blanco para el título por si acaso */
+    color: #fff !important; 
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; 
+}
+.info-box strong {
+    /* Aseguramos que todas las etiquetas strong sean blancas */
+    color: #fff !important; 
+}
+
+/* 5. Estilos de Botón y Cantidad */
+.cantidad-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.cantidad-box label {
+    font-weight: bold;
+    color: #000; /* Asumiendo fondo blanco fuera de info-box */
+}
+.cantidad-box input[type="number"] {
+    width: 80px; 
+    padding: 0.7rem;
+    border: 2px solid #000; 
+    text-align: center;
+    background: #fff;
+    color: #000;
+}
+
+.add-to-cart-button {
+    padding: 0.8rem 0;
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}

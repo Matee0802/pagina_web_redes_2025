@@ -1,0 +1,95 @@
+/* ==== Tablet (768px a 1024px) ==== */
+@media (max-width: 1024px) and (min-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 4%;
+  }
+
+  .logo {
+    font-size: 2.5vw;
+    margin: 0;
+  }
+
+  .search-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 60%;
+    margin: 0;
+  }
+
+  .search-bar input {
+    width: 80%;
+    font-size: 1.5vw;
+  }
+
+  .search-bar button {
+    width: flex;
+    font-size: 2vw;
+    padding: 0.4vw 1.5vw;
+  }
+
+  nav li a {
+    text-align: center;
+    display: block;
+    font-size: 2vw; 
+    padding: 1% 2%;
+  }
+
+  
+
+  .footer-box {
+    font-size: 1.5vw;
+  }
+  
+  nav ul li {
+    margin: 0 1vw;
+  }
+  
+ .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .pago-donaciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .pago-donaciones img {
+    max-width: 140px;
+    margin: 0 auto;
+  }
+
+  .stack-item {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .footer-box.redes {
+    text-align: center;
+  }
+
+  .footer-box.redes h4 {
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-copy {
+    grid-column: 1 / 4; /* ocupa todo el ancho */
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .card {
+  margin: 18px 12px;     /* Más separación del borde y entre cards */
+  height: 420px;         /* Menos alto que escritorio */
+  width: 44vw;           /* Opcional: ajusta el ancho para tablet */
+}
+}

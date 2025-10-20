@@ -1,0 +1,36 @@
+@media (min-width: 1025px) {
+  /* ...otros estilos... */
+
+  .footer-grid {
+    min-height: 160px; /* Footer más alto */
+  }
+
+  .footer-box.redes {
+    flex-direction: column; /* Botones uno abajo del otro */
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .footer-box.redes a {
+    display: block;
+    margin-bottom: 8px;
+    margin-left: 0; /* Elimina margen izquierdo */
+    text-align: left;
+  }
+
+  .footer-copy {
+    width: 100%;
+    background: #111;
+    color: #bfc8d0;
+    text-align: center; /* Centra la marca de agua */
+    padding: 16px 32px; /* Más alto */
+    font-size: 1vw;
+    margin-top: 0;
+    border-top: 1px solid #222;
+    letter-spacing: 0.5px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: block;
+  }
+}

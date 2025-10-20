@@ -1,0 +1,1336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* ================= Header ================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: #fff;
+  padding: 1% 2%;
+}
+
+.logo {
+  font-size: 1.2vw;
+  font-weight: bold;
+  background: #fff;
+  color: #000;
+  padding: 0.5% 1%;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.search-bar input {
+  width: 85%;
+  padding: 0.7vw;
+  font-size: 1vw;
+  border: none;
+  outline: none;
+}
+
+.search-bar button {
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2vw;
+  padding: 0.6vw 1.5vw;
+}
+
+/* ================= Navbar ================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 0 2%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 1vw 1.5vw;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+nav li a:hover {
+  background-color: #333;
+}
+
+/* Diferencia en el lado derecho */
+.nav-right li a {
+  padding: 1vw 1.2vw;
+}
+
+/* Botón hamburguesa (oculto por defecto) */
+.menu-toggle {
+  display: none;
+  font-size: 6vw;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ================= Carrusel ================= */
+.carousel {
+  position: relative;
+  margin: 2% auto;
+  width: 90%;
+  height: 70vh;
+  background: #fff;
+  border: 0.3vw solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background: #eee;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ddd;
+  border: none;
+  padding: 1%;
+  cursor: pointer;
+}
+
+.arrow.left {
+  left: 1%;
+}
+
+.arrow.right {
+  right: 1%;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 3%;
+  display: flex;
+  gap: 0.5vw;
+}
+
+.dot {
+  width: 1vw;
+  height: 1vw;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background: #555;
+}
+
+/* ================= Productos Grid Section ================= */
+.products-section {
+  width: 90%;
+  margin: 3% auto;
+  background: #fff;
+  border: 0.3vw solid #000;
+  padding: 1.5rem;
+}
+
+.filter-bar {
+  text-align: center;
+  padding: 1.5rem;
+  border: 2px solid #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #000;
+  text-align: center;
+  overflow: hidden;
+}
+
+.product-image {
+  background: #d9d9d9;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.product-name,
+.product-price {
+  padding: 0.5rem;
+  background: #fff;
+  border-top: 2px solid #000;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-price {
+  border-top: none;
+  background: #d9d9d9;
+}
+
+.view-more-button {
+  display: block;
+  width: 25%;
+  margin: 1.5rem auto 0;
+  padding: 0.75rem 0;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+/* ================= Secciones ================= */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin: 3% 0;
+}
+
+.card {
+  border: 0.2vw solid #000;
+  padding: 10% 2%;
+  text-align: center;
+  width: 25%;
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+.text-box {
+  width: 80%;
+  margin: 3% auto;
+  border: 0.2vw solid #000;
+  padding: 2%;
+  text-align: center;
+  font-size: 1vw;
+}
+
+/* ================= Footer ================= */
+/* Footer general */
+.footer-seccion {
+  background: #000;
+  color: #fff;
+  padding: 1.5rem;
+}
+
+/* Grid: logo | centro (donac/alias) | redes */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 18% 40% 42%;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Cada "columna" sin padding interno extra (las cajas blancas están dentro) */
+.footer-box {
+  background: transparent;
+  padding: 0;
+  text-align: center;
+}
+
+/* Mercado Pago: imagen dentro de un recuadro blanco */
+.mp-img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 120px;
+  background: #fff;
+  padding: 0.5rem;
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+
+/* Columna central: apilar donación + alias */
+.middle .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+/* Estilo común para los elementos apilados (blanco con borde negro) */
+.stack-item {
+  width: 100%;
+  max-width: 300px;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  padding: 0.6rem 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Donaciones: es un link (botón visual) */
+.stack-donacion {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Alias: texto plano (no link) */
+.alias-text {
+  font-weight: 500;
+}
+
+/* Redes sociales (mantener similar a lo anterior) */
+.footer-box.redes {
+  text-align: left;
+  padding-left: 1rem;
+}
+.footer-box.redes h4 {
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.footer-box.redes a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin: 0.4rem 0;
+}
+.footer-box.redes a:hover { color: #ff4d4d; }
+
+/* Footer copy */
+.footer-copy {
+  text-align: center;
+  color: #bbb;
+  margin-top: 1rem;
+  border-top: 1px solid #111;
+  padding-top: 0.6rem;
+}
+
+
+/* ================= Mobile/Generic Product View (White Blocks) ================= */
+.product-view {
+  /* Estilo móvil/genérico: se apila verticalmente */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  gap: 0.5rem;
+}
+
+.main-image {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.main-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+}
+
+.gallery-column {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  overflow-x: auto;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.gallery-thumbnail {
+  min-width: 100px;
+  height: 70px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  flex: 0 0 auto;
+  background: #f3f3f3;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.info-box {
+  background: #fff;
+  color: #000;
+  padding: 0.7rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.price-box {
+  background: #f3f3f3;
+  color: #111;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  text-align: left;
+  margin-bottom: 0.2rem;
+  box-shadow: none;
+}
+
+.product-name-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  padding: 1rem 0;
+  background: red;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.cantidad-box input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-top: 0.2rem;
+  background: #fff;
+  color: #000;
+}
+
+.shipping-box {
+  background: #f3f3f3;
+  color: #000;
+  text-align: left;
+  border-radius: 8px;
+  padding: 0.7rem;
+  margin-bottom: 0.3rem;
+  box-shadow: none;
+}
+
+.envio-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.envio-row input[type="text"] {
+  flex: 2;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background: #fff;
+  color: #000;
+}
+
+.calcular-envio-btn {
+  flex: 1;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 0.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.product-specs {
+  /* Estilo genérico para la caja de especificaciones */
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem; 
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+
+/* ================== Responsive (GENERAL) ================== */
+
+/* ==== Tablet (768px a 1024px) - GENERAL ==== */
+@media (max-width: 1024px) and (min-width: 768px) {
+  /* ==== Tablet (768px a 1024px) ==== */
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 4%;
+  }
+
+  .logo {
+    font-size: 2.5vw;
+    margin: 0;
+  }
+
+  .search-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 60%;
+    margin: 0;
+  }
+
+  .search-bar input {
+    width: 80%;
+    font-size: 1.5vw;
+  }
+
+  .search-bar button {
+    width: flex;
+    font-size: 2vw;
+    padding: 0.4vw 1.5vw;
+  }
+
+  nav li a {
+    text-align: center;
+    display: block;
+    font-size: 2vw; 
+    padding: 1% 2%;
+  }
+
+  .products-section {
+    width: 95%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .view-more-button {
+    width: 50%;
+    font-size: 2vw;
+  }
+
+  .cards-section {
+    flex-wrap: wrap;
+    gap: 3%;
+  }
+
+  .card {
+    width: 45%;
+    font-size: 2vw;
+    padding: 8% 2%;
+  }
+
+  .text-box {
+    width: 90%;
+    font-size: 1.5vw;
+  }
+
+  .footer-box {
+    font-size: 1.5vw;
+  }
+  
+  nav ul li {
+    margin: 0 1vw;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-copy {
+    grid-column: 1 / 4;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* ====== PRODUCTO (Venta) ====== */
+  .product-view {
+    display: grid;
+    grid-template-columns: 20% 40% 37%;
+    grid-template-rows: auto auto 1fr; 
+    border: 0.3vw solid #000;   /* marco negro general */
+    width: 95%; 
+    margin: 3% auto; 
+    gap: 0.8rem; 
+    padding: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .main-image {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    height: auto; 
+    background: #000;
+    border-radius: 10px; 
+    padding: 0.2rem;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .main-image img {
+    border-radius: 8px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .gallery-column {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    gap: 0.5rem;
+    padding: 0.2rem 0; 
+    height: 100%;
+    overflow-x: hidden; 
+  }
+  
+  .gallery-thumbnail {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background: #000;
+    color: #fff;
+    border-radius: 8px; 
+    height: auto; 
+    flex-shrink: 1;
+    font-size: 1.2vw; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+    /* Miniaturas: Asegurar que la imagen dentro rellene el espacio */
+  .gallery-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 👈 AGREGAR/CONFIRMAR esta línea */
+    border-radius: 8px;
+  }
+
+  .info-column {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  /* ===== Bloques internos ===== */
+  .info-box {
+    background: #fff; 
+    color: #000;
+    padding: 0.8rem;
+    font-size: 1.6vw; 
+    border: 0.1vw solid #000;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .product-name-title {
+    font-size: 2vw; 
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+  }
+
+  .price-box {
+    background: #f3f3f3; 
+    color: #000;
+    font-weight: bold;
+    font-size: 2vw; 
+    border: 0.15vw solid #000;
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .cantidad-box {
+    background: #fff;
+    border: 0.1vw solid #000;
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cantidad-box label {
+    font-weight: bold;
+    color: #000;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .cantidad-box input[type="number"] {
+    width: 100%;
+    padding: 0.5rem; 
+    font-size: 1.4vw; 
+    border: 0.1vw solid #000; 
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+  }
+
+  .shipping-box {
+    background: #f3f3f3;
+    border: 0.15vw solid #000;
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+    text-align: left;
+  }
+
+  .shipping-box label {
+    font-weight: bold;
+    color: #000;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .envio-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+  }
+
+  .envio-row input[type="text"] {
+    flex: 2;
+    padding: 0.5rem; 
+    font-size: 1.4vw; 
+    border: 0.1vw solid #000; 
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+  }
+
+  .calcular-envio-btn {
+    flex: 1;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 1.4vw; 
+    padding: 0.5rem 0.2rem; 
+    border-radius: 5px; 
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+    font-size: 2vw; 
+    padding: 0.8rem 0;
+    background: red;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .product-specs {
+    grid-column: 1 / 4; 
+    grid-row: 3 / 4; 
+    background: #fff;
+    color: #000;
+    padding: 0.5rem;
+    text-align: center;
+    margin-top: 0.5rem; 
+    font-size: 1.6vw; 
+    font-weight: bold;
+    border-radius: 10px; 
+    border: 0.15vw solid #000;
+  }
+}
+
+/* ==== Celular (menor a 767px) ==== */
+@media (max-width: 767px) {
+   header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 4%;
+    gap: 2%;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 6vw;
+    cursor: pointer;
+    color: #fff;
+    justify-self: start;
+  }
+
+  .logo {
+    font-size: 4.5vw;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .search-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 110%;
+    justify-self: end;
+  }
+
+  .search-bar input {
+    width: 150%;
+    font-size: 3.5vw;
+  }
+
+  .search-bar button {
+    font-size: 4vw;
+    padding: 0.4vw 2vw;
+  }
+
+  .products-section {
+    width: 95%;
+  }
+
+  .filter-bar {
+    font-size: 4vw;
+    padding: 1rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .product-image {
+    height: 150px;
+    font-size: 1rem;
+  }
+
+  .product-name,
+  .product-price {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .view-more-button {
+    width: 60%;
+    font-size: 3vw;
+  }
+
+   nav {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li a {
+    padding: 2vw 0;
+    text-align: center;
+    font-size: 4vw;
+  }
+
+  .nav-right {
+    margin-top: 1vw;
+  }
+
+  /* ================== DISEÑO DE PRODUCTO (VENTA) PARA CELULAR ================== */
+  .product-view {
+    display: flex;
+    flex-direction: column; /* Apilamos todos los elementos verticalmente */
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 0; /* Sin padding en el contenedor principal */
+    border: none;
+    gap: 0; /* Sin gap entre los elementos principales */
+    background-color: #fff; /* Fondo blanco */
+  }
+
+  /* La imagen principal ocupa todo el ancho */
+  .main-image {
+    width: 100%;
+    height: 60vh; /* Una altura considerable para que se vea bien */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0; /* Un gris claro para el fondo si la imagen no cubre todo */
+    border-radius: 0; /* Sin bordes redondeados en los extremos */
+    overflow: hidden;
+    padding: 0; /* Sin padding interno para que la imagen ocupe todo */
+    border: none; /* Sin borde */
+  }
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Para que la imagen se ajuste sin cortarse */
+    border-radius: 0;
+  }
+
+  /* Las miniaturas van debajo de la imagen principal */
+  .gallery-column {
+    display: flex;
+    flex-direction: row; /* En fila */
+    justify-content: center; /* Centradas */
+    gap: 10px; /* Separación entre miniaturas */
+    overflow-x: auto; /* Si hay muchas, se podrá hacer scroll horizontal */
+    margin: 10px 0; /* Margen arriba y abajo para separarlas */
+    padding: 0 10px; /* Pequeño padding horizontal si es necesario */
+    width: 100%;
+  }
+ 
+  .gallery-thumbnail {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background: #000;
+    color: #fff;
+    border-radius: 8px; 
+    height: auto; 
+    flex-shrink: 1;
+    font-size: 1.2vw; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+    /* Miniaturas: Asegurar que la imagen dentro rellene el espacio */
+  .gallery-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 👈 AGREGAR/CONFIRMAR esta línea */
+    border-radius: 8px;
+  }
+
+
+  /* El nombre del producto va DESPUÉS de las miniaturas */
+  .product-name-title {
+    font-size: 6vw; /* Tamaño de letra más grande para el nombre */
+    font-weight: bold;
+    text-align: left; /* Alineado a la izquierda */
+    margin: 0 15px 15px 15px; /* Márgenes para separarlo de los lados y de abajo */
+    color: #000; /* Color negro */
+    background-color: #fff;
+  }
+
+  /* Toda la columna de información (precio, cantidad, botones) va debajo del nombre */
+  .info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Separación entre los bloques de info */
+    width: 100%;
+    padding: 0 15px; /* Padding horizontal para el contenido */
+  }
+
+  /* Estilos para los bloques de información (precio, cantidad, envío) */
+  .info-box {
+    background: #fff; /* Fondo blanco */
+    color: #000;
+    padding: 10px 15px;
+    font-size: 4vw; 
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .price-box {
+    background: #f8f8f8; /* Un fondo un poco más oscuro para el precio */
+    color: #111;
+    font-weight: bold;
+    font-size: 5vw; /* Precio más grande */
+    border-radius: 8px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  .add-to-cart-btn {
+    width: 100%;
+    font-size: 5vw; 
+    padding: 15px 0;
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Botón redondeado */
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .cantidad-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .cantidad-box label {
+    font-size: 4vw;
+    color: #333;
+  }
+  .cantidad-box input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 4vw;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    color: #000;
+  }
+
+  .shipping-box {
+    background: #f8f8f8; /* Fondo más oscuro para el envío */
+    color: #000;
+    text-align: left;
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+  }
+  .shipping-box label {
+    font-size: 4vw;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  .envio-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+  }
+
+  .envio-row input[type="text"] {
+    flex: 2;
+    padding: 10px;
+    font-size: 4vw;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    color: #000;
+  }
+  .calcular-envio-btn {
+    flex: 1;
+    background: #000; /* Botón calcular de color negro */
+    color: #fff;
+    border: none;
+    font-size: 4vw;
+    padding: 10px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  /* El cuadro de especificaciones va al final */
+  .product-specs {
+    background: #f8f8f8; /* Fondo más oscuro */
+    color: #000;
+    padding: 15px;
+    text-align: left; /* Alineado a la izquierda */
+    font-size: 4vw;
+    font-weight: normal;
+    margin: 15px 15px 0 15px; /* Márgenes para separarlo */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+}
+
+
+
+
+/* ==== Compus (1025px en adelante) - DISEÑO DE PRODUCTO (VENTA) ==== */
+@media (min-width: 1025px) {
+
+  .product-view {
+    display: grid;
+    /* 3 columnas: Galería (12%), Imagen Principal (40%), Info (40%) */
+    grid-template-columns: 12% 45% 40%;
+    /* 3 filas: 2 para contenido, 1 para specs */
+    grid-template-rows: auto auto 1fr; 
+    border: 0.3vw solid #000;
+    width: 90%; 
+    margin: 3% auto; 
+    gap: 1rem; 
+    padding: 1.5rem;
+  }
+
+  /* La imagen principal va en la columna del medio y ocupará 2 filas */
+  .main-image {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    aspect-ratio: 1 / 1; 
+    height: auto; 
+    background: #000;
+    border-radius: 0;
+    box-shadow: none;
+    border: 0.3vw solid #000;
+    overflow: hidden;
+    /* Este es el marco negro interno que da la altura visual */
+    padding: 0.5rem; 
+  }
+  
+  .main-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    border-radius: 0;
+  }
+
+  
+  /* ... código existente ... */
+
+  /* La galería va en la primera columna, ocupando 2 filas */
+  .gallery-column {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    /* CAMBIO CLAVE: Dirección vertical (como en Tablet/Móvil) */
+    flex-direction: column; 
+    /* Clave: Distribuye el espacio entre las miniaturas */
+    justify-content: space-between; 
+    gap: 0.5rem; /* 👈 Aumentamos el gap a 0.5rem para separarlas verticalmente */
+    height: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 1.5rem 0;
+    /* CAMBIO CLAVE: Evita el scroll horizontal (si lo tuviera) y no lo muestra */
+    overflow-x: hidden; 
+  }
+  
+  /* ... resto del código ... */
+  
+  /* Estilo de las miniaturas de la galería */
+  .gallery-thumbnail {
+    width: 100%;
+    flex-shrink: 0; 
+    /* Altura definida por el ancho para hacerlo cuadrado */
+    aspect-ratio: 1 / 1; /* 👈 CLAVE 1: Define el contenedor como cuadrado */
+    height: auto; /* Permite que aspect-ratio funcione */
+    
+    background: #d9d9d9;
+    color: #666;
+    border: 0.3vw solid #000; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border 0.2s;
+    overflow: hidden;
+    font-size: 0.8vw; 
+    font-weight: bold;
+    border-radius: 0; 
+    /* ❌ ELIMINAR O PONER A CERO EL PADDING EXCESIVO */
+    padding: 0; /* 👈 CLAVE 2: Eliminar el padding que creaba espacio vacío */
+  }
+
+  /* La regla que ya existe para la imagen dentro de la miniatura */
+  .gallery-thumbnail .thumbnail{ /* 👈 Seleccionamos el .thumbnail dentro de .gallery-thumbnail */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* 👈 CLAVE 3: Asegura que la imagen rellene el contenedor */
+    display: block;
+  }
+  
+  /* ... resto del código ... */
+
+
+  /* La columna de información va en la tercera columna, ocupando 2 filas */
+  .info-column {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Clave: Padding vertical para ALINEAR con el marco interno de la imagen principal */
+    padding: 1.5rem 0 0;
+  }
+
+  /* Estilos para los cuadros negros con texto blanco en la columna de información */
+  .info-box {
+    background: #000;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.2vw;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  
+  .price-box {
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0;
+    text-align: left;
+    box-shadow: none;
+    border: none;
+    padding: 1rem;
+  }
+  
+  .product-name-title {
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #000000;
+    background-color: #fff;
+  }
+  
+  .add-to-cart-btn {
+    width: 100%;
+    font-size: 1.3vw; 
+    border-radius: 0;
+    padding: 0.8rem 0;
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+  }
+  
+  .cantidad-box label {
+    font-weight: bold;
+    color: #fff;
+    display: block;
+  }
+  
+  .cantidad-box input[type="number"] {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1.1vw;
+    border: 0.1vw solid #fff; 
+    border-radius: 0;
+    background: #000;
+    color: #fff;
+  }
+  
+  .shipping-box {
+    background: #000;
+    color: #fff;
+    text-align: left;
+    border-radius: 0;
+    padding: 1rem;
+    box-shadow: none;
+    border: none;
+  }
+
+  .shipping-box label {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .envio-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+  }
+  
+  .envio-row input[type="text"] {
+    flex: 2;
+    padding: 0.7rem;
+    font-size: 1.1vw;
+    border: 0.1vw solid #fff; 
+    border-radius: 0;
+    background: #000;
+    color: #fff;
+  }
+  
+  .calcular-envio-btn {
+    flex: 1;
+    background: red;
+    color: #fff;
+    border: none;
+    font-size: 1.1vw;
+    padding: 0.7rem 0.5rem; 
+    border-radius: 0;
+    font-weight: bold;
+  }
+  
+  /* Esta nueva regla es para el cuadro grande de especificaciones */
+  .product-specs {
+    grid-column: 1 / 4; 
+    grid-row: 3 / 4; 
+    background: #000;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 1.2vw;
+    font-weight: bold;
+    border: 0.3vw solid #000;
+  }
+} 
